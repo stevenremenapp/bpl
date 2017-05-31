@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Step 2</title>
+  </head>
+  <body>
+    <h3>Keep going!</h3>
+    <p>This is the NEXT clue to get to a place. Find a code and insert it into the box below. Entering it correctly and then pressing the button will give you your next clue!</p>
+    <form>
+      <input type="text" name="2" id="input2" placeholder="Enter code here!">
+      <input type="button" class="btn btn-primary" name="button2" value="Go!" onclick="check()">
+      <!-- <a href="2.html" class="btn btn-primary" role="button" onclick="check()">Go!</a> -->
+    </form>
+
+    <span id="again"></span>
+
+    <script type="text/javascript">
+      function check() {
+
+        //grab input
+        var x = document.getElementById("input2").value;
+
+        //check if input is correct
+        if(x === "a" || x === "A") {
+          window.location.href = "3.html";
+        } else {
+          text = "Try again";
+        };
+
+        //display try again
+        document.getElementById("again").innerHTML = text;
+      };
+    </script>
+
+  </body>
+</html>
