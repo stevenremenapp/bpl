@@ -4,17 +4,40 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Step 1</title>
+    <style media="screen">
+    h1 {
+      font-size: 6vw;
+      text-align: center;
+    }
+    p {
+      font-size: 4vw;
+      margin-top: 1em;
+      margin-bottom: 1.25em;
+    }
+    input {
+      width: 100%;
+      padding: 0.35em;
+      margin-bottom: 2.25em;
+      font-size: 2.5vw;
+    }
+    #button1 {
+      font-size: 2.5vw;
+    }
+    </style>
   </head>
   <body>
-    <h3>You've started your journey!</h3>
-    <p>Here we begin to see the new library and particpate with others. This is the clue to get to a place. Find a code and insert it into the box below. Entering it correctly and then pressing the button will give you your next clue!</p>
-    <form>
-      <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
-      <input type="button" class="btn btn-primary" name="button1" value="Go!" onclick="check()">
-      <!-- <a href="2.html" class="btn btn-primary" role="button" onclick="check()">Go!</a> -->
-    </form>
+    <div class="container">
+      <h1>You've started your journey!</h1>
+      <p>Here we begin to see the new library and particpate with others. This is the clue to get to a place. Find a code and insert it into the box below. Entering it correctly and then pressing the button will give you your next clue!</p>
+      <form>
+        <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
+        <br>
+        <input type="button" class="btn btn-primary" id="button1" value="Go!" onclick="check()">
+        <!-- <a href="2.html" class="btn btn-primary" role="button" onclick="check()">Go!</a> -->
+      </form>
 
-    <span id="again"></span>
+      <span id="again"></span>
+    </div>
 
     <script type="text/javascript">
       function check() {
