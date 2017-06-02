@@ -9,6 +9,23 @@
     h1 {
       font-size: 6vw;
       text-align: center;
+      margin-bottom: 0.75em;
+    }
+    hr {
+      padding: 0;
+      border: none;
+      border-top: medium double #428bca;
+      color: #428bca;
+      text-align: center;
+    }
+    hr:after {
+      content: "\002315";
+      display: inline-block;
+      position: relative;
+      top: -0.8em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: #fff;
     }
     p {
       font-size: 4.5vw;
@@ -23,12 +40,14 @@
     }
     #button1 {
       font-size: 4.5vw;
+      margin-bottom: 1em;
     }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>You've started your journey!</h1>
+      <hr>
       <p>Here we begin to see the new library and particpate with others. This is the clue to get to a place. Find a code and insert it into the box below. Entering it correctly and then pressing the button will give you your next clue!</p>
       <form>
         <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
