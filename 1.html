@@ -35,19 +35,19 @@
     input {
       width: 100%;
       padding: 0.35em;
-      margin-top: 1.25em;
+      margin-top: 1.5em;
       margin-bottom: 0.5em;
       font-size: 4.5vw;
     }
     #button1 {
       font-size: 4.5vw;
       margin-bottom: 1em;
-      margin-top: 1.5em;
+      margin-top: 1.25em;
       transition: opacity 1s;
     }
     #again {
       color: red;
-      font-size: 3vw;
+      font-size: 4.5vw;
       display: none;
       max-height: 0.05em;
     }
@@ -59,8 +59,8 @@
       <hr>
       <p>Here we begin to see the new library and particpate with others. This is the clue to get to a place. Find a code and insert it into the box below. Entering it correctly and then pressing the button will give you your next clue!</p>
       <form>
-        <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
         <div id="again">Try again!</div>
+        <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
         <input type="button" class="btn btn-primary" id="button1" value="Go!" onclick="check()">
       </form>
     </div>
