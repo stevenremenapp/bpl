@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <title>Step 3</title>
+    <title>Step 6</title>
     <style media="screen">
     h1 {
       font-size: 6vw;
@@ -55,9 +55,9 @@
   </head>
   <body>
     <div class="container">
-      <h1>This is step 3!</h1>
+      <h1>This is step 6!</h1>
       <hr>
-      <p>This is the clue to get to the next next place. Find a code and enter it into the box below. Entering it correctly and pressing the button will give you your next clue!</p>
+      <p>This is the clue to get to the next next next next next place. Find a code and enter it into the box below. Entering it correctly and pressing the button will give you your next clue!</p>
       <form>
         <div id="again">Try again!</div>
         <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
@@ -71,8 +71,8 @@
         var x = document.getElementById("input1").value;
 
         //check if input is correct
-        if(x === "r" || x === "r " || x === " r" || x === "R" || x === "R " || x === " R") {
-          window.location.href = "4.html";
+        if(x === "a" || x === "a " || x === " a" || x === "A" || x === "A " || x === " A") {
+          window.location.href = "end.html";
         } else {
           //display try again
           $("#again").fadeIn(1000).delay(2500).fadeOut(2000);
@@ -86,8 +86,8 @@
           //grab input
           var x = document.getElementById("input1").value;
           //check if input is correct
-          if(x === "r" || x === "r " || x === " r" || x === "R" || x === "R " || x === " R") {
-            window.location.href = "4.html";
+          if(x === "a" || x === "a " || x === " a" || x === "A" || x === "A " || x === " A") {
+            window.location.href = "end.html";
           } else {
             //display try again
             $("#again").fadeIn(1000).delay(2500).fadeOut(2000);
