@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>Stop 2</title>
+    <style media="screen">
+    h1 {
+      font-size: 6vw;
+      text-align: center;
+      margin-bottom: 0.75em;
+    }
+    hr {
+      padding: 0;
+      border: none;
+      border-top: medium double #428bca;
+      color: #428bca;
+      text-align: center;
+    }
+    hr:after {
+      content: "\002315";
+      display: inline-block;
+      position: relative;
+      top: -0.85em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: #fff;
+    }
+    p {
+      font-size: 4.5vw;
+      margin-top: 1em;
+    }
+    input {
+      width: 100%;
+      padding: 0.35em;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      font-size: 4.5vw;
+    }
+    #button1 {
+      font-size: 4.5vw;
+      margin-bottom: 0.25em;
+      margin-top: 1.25em;
+    }
+    #again {
+      color: red;
+      font-size: 4.5vw;
+      font-weight: bold;
+      display: none;
+      max-height: 0.05em;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stop #2</h1>
+      <hr>
+      <p>You're off to a good start! Next, we'll look for a good summer movie. Browse in the <strong>Classic</strong> movie section for a modern classic movie called 'Sack Lunch' (it's a shame so few people have seen this movie). It's not in the catalog, but I think you'll still be able to find it... open the case to find your code.</p>
+      <form>
+        <div id="again">Try again!</div>
+        <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
+        <input type="button" class="btn btn-primary" id="button1" value="Go!" onclick="check()">
+      </form>
+      <p>Progress:</p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+          <span class="sr-only">10% Complete</span>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function check() {
+        //grab input
+        var x = document.getElementById("input1").value;
+
+        //check if input is correct
+        if(x === "h" || x === "h " || x === " h" || x === "H" || x === "H " || x === " H") {
+          window.location.href = "3652.html";
+        } else {
+          //display try again
+          $("#again").fadeIn(1000).delay(2500).fadeOut(2000);
+        };
+      };
+
+      //allow enter or return key to input code
+      function enter(event) {
+        if(event.key === "Enter") {
+          event.preventDefault();
+          //grab input
+          var x = document.getElementById("input1").value;
+          //check if input is correct
+          if(x === "h" || x === "h " || x === " h" || x === "H" || x === "H " || x === " H") {
+            window.location.href = "3652.html";
+          } else {
+            //display try again
+            $("#again").fadeIn(1000).delay(2500).fadeOut(2000);
+          };
+        };
+      };
+
+    </script>
+
+  </body>
+</html>
