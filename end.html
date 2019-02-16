@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +7,54 @@
     <title>Congrats on Finishing the 2017 Summer Reading Scavenger Hunt!</title>
     <style media="screen">
     h1 {
-      font-size: 6vw;
+      font-size: 5em;
       text-align: center;
+      margin-bottom: 0.75em;
+    }
+    hr {
+      padding: 0;
+      border: none;
+      border-top: medium double #428bca;
+      color: #428bca;
+      text-align: center;
+    }
+    hr:after {
+      content: "\002315";
+      display: inline-block;
+      position: relative;
+      top: -0.85em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: #fff;
     }
     img {
       width: 100%;
+      max-width: 700px;
       height: auto;
+      display: block;
+      margin: 3em auto;
     }
     p {
-      font-size: 4.5vw;
+      font-size: 3em;
       margin-top: 1em;
-      margin-bottom: 1em;
+    }
+    @media screen and (max-width: 767px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      img {
+        margin: 2em auto;
+      }
+      p {
+        font-size: 1.5em;
+      }
     }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>Congrats on Finishing the 2017 Summer Reading Scavenger Hunt!</h1>
+      <hr>
       <img src="https://media.giphy.com/media/7rj2ZgttvgomY/giphy.gif" alt="Shia LeBeouf clapping">
       <p>We hope you enjoyed getting to know your new library and don't forget to sign up for Summer Reading if you haven't already!</p>
     </div>

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <title>Stop 7</title>
     <style media="screen">
     h1 {
-      font-size: 6vw;
+      font-size: 5em;
       text-align: center;
       margin-bottom: 0.75em;
     }
@@ -29,27 +28,57 @@
       background: #fff;
     }
     p {
-      font-size: 4.5vw;
+      font-size: 3em;
       margin-top: 1em;
     }
-    input {
+    #codeInput {
       width: 100%;
       padding: 0.35em;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-      font-size: 4.5vw;
+      margin: 0.5em auto;
+      font-size: 3em;
     }
-    #button1 {
-      font-size: 4.5vw;
+    #submitBtn {
+      width: 100%;
+      font-size: 3em;
       margin-bottom: 0.25em;
       margin-top: 1.25em;
     }
     #again {
       color: red;
-      font-size: 4.5vw;
+      font-size: 3em;
       font-weight: bold;
-      display: none;
-      max-height: 0.05em;
+      opacity: 0;
+    }
+    #again.showTryAgainAnimation {
+      animation: showTryAgain 3s linear;
+    }
+    @keyframes showTryAgain {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      p {
+        font-size: 1.5em;
+      }
+      #codeInput {
+      font-size: 1.5em;
+      }
+      #submitBtn {
+        font-size: 1.5em;
+      }
+      #again {
+      font-size: 1.5em;
+    }
     }
     </style>
   </head>
@@ -61,8 +90,8 @@
       <p> Say hi to Martha Baldwin, this library's founder, as you walk in and find your code on the newly restored window. It's said that her ghost still haunts this building.</p>
       <form>
         <div id="again">Try again!</div>
-        <input type="text" name="1" id="input1" placeholder="Enter code here!" onkeypress="enter(event)">
-        <input type="button" class="btn btn-primary" id="button1" value="Go!" onclick="check()">
+        <input type="text" name="1" id="codeInput" placeholder="Enter code here!">
+        <button class="btn btn-primary" id="submitBtn">Go!</button>
       </form>
       <p>Progress:</p>
       <div class="progress">
@@ -73,36 +102,48 @@
     </div>
 
     <script type="text/javascript">
-      function check() {
-        //grab input
-        var x = document.getElementById("input1").value;
 
+      let goBtn = document.getElementById('submitBtn');
+      goBtn.addEventListener('click', checkOnClick);
+      let codeInput = document.getElementById('codeInput');
+      codeInput.addEventListener('onkeypress', checkOnEnter);
+
+      function checkOnClick(event) {
+        //grab user input
+        let userInput = codeInput.value;
         //check if input is correct
-        if(x === "e" || x === "e " || x === " e" || x === "E" || x === "E " || x === " E") {
+        if(userInput === "e" || userInput === "e " || userInput === " e" || userInput === "E" || userInput === "E " || userInput === " E") {
           window.location.href = "8679.html";
         } else {
           //display try again
-          $("#again").fadeIn(1000).delay(2500).fadeOut(2000);
+          let tryAgainText = document.getElementById('again');
+          tryAgainText.addEventListener('animationend', function() {
+            tryAgainText.classList.remove('showTryAgainAnimation');
+          });
+          tryAgainText.classList.add('showTryAgainAnimation');
         };
+        event.preventDefault();
       };
 
       //allow enter or return key to input code
-      function enter(event) {
+      function checkOnEnter(event) {
+        //grab user input
+        let userInput = codeInput.value;
         if(event.key === "Enter") {
           event.preventDefault();
-          //grab input
-          var x = document.getElementById("input1").value;
           //check if input is correct
-          if(x === "e" || x === "e " || x === " e" || x === "E" || x === "E " || x === " E") {
+          if(userInput === "e" || userInput === "e " || userInput === " e" || userInput === "E" || userInput === "E " || userInput === " E") {
             window.location.href = "8679.html";
           } else {
             //display try again
-            $("#again").fadeIn(1000).delay(2500).fadeOut(2000);
+            let tryAgainText = document.getElementById('again');
+            tryAgainText.addEventListener('animationend', function() {
+              tryAgainText.classList.remove('showTryAgainAnimation');
+            });
+            tryAgainText.classList.add('showTryAgainAnimation');
           };
         };
       };
-
     </script>
-
   </body>
 </html>

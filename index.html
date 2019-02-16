@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +7,53 @@
     <title>Welcome to the 2017 Summer Reading Scavenger Hunt</title>
     <style media="screen">
     h1 {
-      font-size: 6vw;
+      font-size: 5em;
       text-align: center;
     }
     img {
       width: 100%;
+      max-width: 700px;
       height: auto;
+      display: block;
+      margin: 4em auto;
     }
     p {
-      font-size: 4.5vw;
+      font-size: 3em;
       margin-top: 1em;
       margin-bottom: 1em;
     }
+    ul {
+      margin-bottom: 60px;
+    }
     li {
-        font-size: 4.5vw;
+        font-size: 2em;
         margin-bottom: 1em;
     }
     #gobutton {
-      font-size: 4.5vw;
+      font-size: 3em;
       width: 100%;
       margin-bottom: 1em;
+    }
+
+    @media screen and (max-width: 767px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      img {
+        margin: 2em auto;
+      }
+      p {
+        font-size: 1.5em;
+      }
+      ul {
+        margin-bottom: 30px;
+      }
+      li {
+        font-size: 1.25em;
+      }
+      #gobutton {
+        font-size: 1.5em;
+      }
     }
     </style>
   </head>
