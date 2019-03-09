@@ -89,7 +89,7 @@
       <p>You're off to a good start! Next, we'll look for a good summer movie. Browse in the <strong>Classic</strong> movie section for a modern classic movie called 'Sack Lunch' (it's a shame so few people have seen this movie). It's not in the catalog, but I think you'll still be able to find it... open the case to find your code.</p>
       <form>
         <div id="again">Try again!</div>
-        <input type="text" name="1" id="codeInput" placeholder="Enter code here!">
+        <input type="text" data-num="2" id="codeInput" placeholder="Enter code here!">
         <button class="btn btn-primary" id="submitBtn">Go!</button>
       </form>
       <p>Progress:</p>
@@ -100,50 +100,6 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-
-      let goBtn = document.getElementById('submitBtn');
-      goBtn.addEventListener('click', checkOnClick);
-      let codeInput = document.getElementById('codeInput');
-      codeInput.addEventListener('onkeypress', checkOnEnter);
-
-      function checkOnClick(event) {
-        //grab user input
-        let userInput = codeInput.value;
-        console.log(userInput);
-        //check if input is correct
-        if(userInput === "h" || userInput === "h " || userInput === " h" || userInput === "H" || userInput === "H " || userInput === " H") {
-          window.location.href = "3652.html";
-        } else {
-          //display try again
-          let tryAgainText = document.getElementById('again');
-          tryAgainText.addEventListener('animationend', function() {
-            tryAgainText.classList.remove('showTryAgainAnimation');
-          });
-          tryAgainText.classList.add('showTryAgainAnimation');
-        };
-        event.preventDefault();
-      };
-
-      //allow enter or return key to input code
-      function checkOnEnter(event) {
-        //grab user input
-        let userInput = codeInput.value;
-        if(event.key === "Enter") {
-          event.preventDefault();
-          //check if input is correct
-          if(userInput === "h" || userInput === "h " || userInput === " h" || userInput === "H" || userInput === "H " || userInput === " H") {
-            window.location.href = "3652.html";
-          } else {
-            //display try again
-            let tryAgainText = document.getElementById('again');
-            tryAgainText.addEventListener('animationend', function() {
-              tryAgainText.classList.remove('showTryAgainAnimation');
-            });
-            tryAgainText.classList.add('showTryAgainAnimation');
-          };
-        };
-      };
-    </script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

@@ -89,7 +89,7 @@
       <p>Alright, this one is easy. Say hi to the librarians at the Adult Reference desk and ask for the code. But while you're there you may also want to ask where the language learning materials are... it's where you're headed next and if you're not sure then asking can make it much easier.</p>
       <form>
         <div id="again">Try again!</div>
-        <input type="text" name="1" id="codeInput" placeholder="Enter code here!">
+        <input type="text" data-num="3" id="codeInput" placeholder="Enter code here!">
         <button class="btn btn-primary" id="submitBtn">Go!</button>
       </form>
       <p>Progress:</p>
@@ -100,50 +100,6 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-
-      let goBtn = document.getElementById('submitBtn');
-      goBtn.addEventListener('click', checkOnClick);
-      let codeInput = document.getElementById('codeInput');
-      codeInput.addEventListener('onkeypress', checkOnEnter);
-
-      function checkonClick(event) {
-        //grab user input
-        let userInput = codeInput.value;
-        //check if input is correct
-        console.log(userInput);
-        if(userInput === "t" || userInput === "t " || userInput === " t" || userInput === "T" || userInput === "T " || userInput === " T") {
-          window.location.href = "4735.html";
-        } else {
-          //display try again
-          let tryAgainText = document.getElementById('again');
-          tryAgainText.addEventListener('animationend', function() {
-            tryAgainText.classList.remove('showTryAgainAnimation');
-          });
-          tryAgainText.classList.add('showTryAgainAnimation');
-        };
-        event.preventDefault();
-      };
-
-      //allow enter or return key to input code
-      function checkOnEnter(event) {
-        //grab user input
-        let userInput = codeInput.value;
-        if(event.key === "Enter") {
-          event.preventDefault();
-          //check if input is correct
-          if(userInput === "t" || userInput === "t " || userInput === " t" || userInput === "T" || userInput === "T " || userInput === " T") {
-            window.location.href = "4735.html";
-          } else {
-            //display try again
-            let tryAgainText = document.getElementById('again');
-            tryAgainText.addEventListener('animationend', function() {
-              tryAgainText.classList.remove('showTryAgainAnimation');
-            });
-            tryAgainText.classList.add('showTryAgainAnimation');
-          };
-        };
-      };
-    </script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
